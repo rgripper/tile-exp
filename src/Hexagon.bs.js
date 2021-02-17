@@ -15,7 +15,7 @@ function createHexagon(width) {
           ],
           [
             width / 4 | 0,
-            Math.imul(width, 56) / 4 | 0
+            Math.imul(width, 56) / 60 | 0
           ],
           [
             0,
@@ -39,7 +39,7 @@ function Hexagon(Props) {
   return React.createElement("polygon", {
               fill: "#ff77ff",
               points: Belt_Array.reduce(Belt_Array.map(hexagon, (function (param) {
-                          return String(param[0] + Math.imul(column, 60) | 0) + "," + String(param[1] + Math.imul(column, 60) | 0);
+                          return String(param[0] + Math.imul(column, 60) | 0) + "," + String(param[1] + Math.imul(column % 10, 60) | 0);
                         })), " ", (function (acc, x) {
                       return acc + " " + x;
                     }))
@@ -48,12 +48,15 @@ function Hexagon(Props) {
 
 var defaultWidth = 60;
 
+var rowLength = 10;
+
 var make = Hexagon;
 
 export {
   createHexagon ,
   hexagon ,
   defaultWidth ,
+  rowLength ,
   make ,
   
 }
