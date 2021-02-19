@@ -1,29 +1,20 @@
-//  "60,30 45,56 15,56 0,30 15,4 45,4"
-let createHexagon = width => [
-  (width, width / 2),
-  (width * 3 / 4, width * 56 / 60),
-  (width / 4, width * 56 / 60),
-  (0, width / 2),
-  (width / 4, width * 4 / 60),
-  (width * 3 / 4, width * 4 / 60),
-]
-let hexagon = createHexagon(60)
+open HexagonUtil
+let hexagon = createHexagon(30.0)
 
-let defaultWidth = 60
-let rowLength = 10
+let defaultWidth = 30.0
 
 @react.component
 let make = (~column: int, ~row: int) => {
+  let (offsetX, offsetY) = calcHexagonPosition(column, row, defaultWidth)
+  Js.log2(offsetX, offsetY)
   <polygon
     points={Belt.Array.reduce(
       Belt.Array.map(hexagon, ((x, y)) =>
-        `${Belt.Int.toString(x + column * defaultWidth)},${Belt.Int.toString(
-            y + mod(column, rowLength) * defaultWidth,
-          )}`
+        `${Belt.Float.toString(x +. offsetX)},${Belt.Float.toString(y +. offsetY)}`
       ),
       " ",
       (acc, x) => acc ++ " " ++ x,
     )}
-    fill="#ff77ff"
+    fill={mod(column, 2) == 0 ? "#ff77ff" : "#77ffff"}
   />
 }

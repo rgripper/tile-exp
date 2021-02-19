@@ -8,18 +8,21 @@ function World(Props) {
   return React.createElement("svg", {
               height: "600",
               width: "600"
-            }, Belt_Array.makeBy(1000, (function (i) {
+            }, Belt_Array.makeBy(36, (function (i) {
                     return React.createElement(Hexagon.make, {
-                                column: i,
-                                row: i,
+                                column: i % 3,
+                                row: i / 3 | 0,
                                 key: String(i)
                               });
                   })));
 }
 
+var rowLength = 3;
+
 var make = World;
 
 export {
+  rowLength ,
   make ,
   
 }

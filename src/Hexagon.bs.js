@@ -2,61 +2,34 @@
 
 import * as React from "react";
 import * as Belt_Array from "bs-platform/lib/es6/belt_Array.mjs";
+import * as HexagonUtil from "./HexagonUtil.bs.js";
 
-function createHexagon(width) {
-  return [
-          [
-            width,
-            width / 2 | 0
-          ],
-          [
-            Math.imul(width, 3) / 4 | 0,
-            Math.imul(width, 56) / 60 | 0
-          ],
-          [
-            width / 4 | 0,
-            Math.imul(width, 56) / 60 | 0
-          ],
-          [
-            0,
-            width / 2 | 0
-          ],
-          [
-            width / 4 | 0,
-            (width << 2) / 60 | 0
-          ],
-          [
-            Math.imul(width, 3) / 4 | 0,
-            (width << 2) / 60 | 0
-          ]
-        ];
-}
-
-var hexagon = createHexagon(60);
+var hexagon = HexagonUtil.createHexagon(30.0);
 
 function Hexagon(Props) {
   var column = Props.column;
+  var row = Props.row;
+  var match = HexagonUtil.calcHexagonPosition(column, row, 30.0);
+  var offsetY = match[1];
+  var offsetX = match[0];
+  console.log(offsetX, offsetY);
   return React.createElement("polygon", {
-              fill: "#ff77ff",
+              fill: column % 2 === 0 ? "#ff77ff" : "#77ffff",
               points: Belt_Array.reduce(Belt_Array.map(hexagon, (function (param) {
-                          return String(param[0] + Math.imul(column, 60) | 0) + "," + String(param[1] + Math.imul(column % 10, 60) | 0);
+                          return String(param[0] + offsetX) + "," + String(param[1] + offsetY);
                         })), " ", (function (acc, x) {
                       return acc + " " + x;
                     }))
             });
 }
 
-var defaultWidth = 60;
-
-var rowLength = 10;
+var defaultWidth = 30.0;
 
 var make = Hexagon;
 
 export {
-  createHexagon ,
   hexagon ,
   defaultWidth ,
-  rowLength ,
   make ,
   
 }
