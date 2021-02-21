@@ -3,9 +3,6 @@
 import * as Curry from "bs-platform/lib/es6/curry.mjs";
 import * as React from "react";
 import * as Belt_Array from "bs-platform/lib/es6/belt_Array.mjs";
-import * as HexagonUtil from "./HexagonUtil.bs.js";
-
-var hexagonBuilder = HexagonUtil.makeHexagonBuilder(30.0);
 
 function getPointsString(points) {
   return Belt_Array.reduce(points, " ", (function (acc, param) {
@@ -16,22 +13,19 @@ function getPointsString(points) {
 function Hexagon(Props) {
   var column = Props.column;
   var row = Props.row;
-  var hexagon = Curry._2(hexagonBuilder.getHexagonAt, column, row);
+  var shapeBuilder = Props.shapeBuilder;
+  var hexagon = Curry._2(shapeBuilder.getHexagonAt, column, row);
   return React.createElement("polygon", {
-              fill: column % 2 === 0 ? "#ff77ff" : "#77ffff",
+              fill: "#aaaaaa",
               points: getPointsString(hexagon)
             });
 }
 
-var defaultWidth = 30.0;
-
 var make = Hexagon;
 
 export {
-  hexagonBuilder ,
-  defaultWidth ,
   getPointsString ,
   make ,
   
 }
-/* hexagonBuilder Not a pure module */
+/* react Not a pure module */
