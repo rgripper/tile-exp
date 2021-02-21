@@ -1,0 +1,238 @@
+{
+  "inputs": {
+    "_snowpack/pkg/common/index-e66f0a38.js": {
+      "bytes": 8994,
+      "imports": []
+    },
+    "_snowpack/pkg/react.js": {
+      "bytes": 1591,
+      "imports": [
+        {
+          "path": "_snowpack/pkg/common/index-e66f0a38.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "_snowpack/pkg/common/index-e66f0a38.js",
+          "kind": "import-statement"
+        }
+      ]
+    },
+    "Tree.bs.js": {
+      "bytes": 2857,
+      "imports": [
+        {
+          "path": "_snowpack/pkg/react.js",
+          "kind": "import-statement"
+        }
+      ]
+    },
+    "_snowpack/pkg/common/caml_array-aa49b891.js": {
+      "bytes": 1174,
+      "imports": []
+    },
+    "_snowpack/pkg/common/curry-991922ea.js": {
+      "bytes": 11989,
+      "imports": [
+        {
+          "path": "_snowpack/pkg/common/caml_array-aa49b891.js",
+          "kind": "import-statement"
+        }
+      ]
+    },
+    "_snowpack/pkg/bs-platform/lib/es6/curry.js": {
+      "bytes": 263,
+      "imports": [
+        {
+          "path": "_snowpack/pkg/common/curry-991922ea.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "_snowpack/pkg/common/caml_array-aa49b891.js",
+          "kind": "import-statement"
+        }
+      ]
+    },
+    "_snowpack/pkg/bs-platform/lib/es6/random.js": {
+      "bytes": 19062,
+      "imports": [
+        {
+          "path": "_snowpack/pkg/common/caml_array-aa49b891.js",
+          "kind": "import-statement"
+        }
+      ]
+    },
+    "_snowpack/pkg/common/js_math-ea94a74f.js": {
+      "bytes": 750,
+      "imports": []
+    },
+    "_snowpack/pkg/bs-platform/lib/es6/belt_Array.js": {
+      "bytes": 13627,
+      "imports": [
+        {
+          "path": "_snowpack/pkg/common/curry-991922ea.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "_snowpack/pkg/common/js_math-ea94a74f.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "_snowpack/pkg/common/caml_array-aa49b891.js",
+          "kind": "import-statement"
+        }
+      ]
+    },
+    "Hexagon.bs.js": {
+      "bytes": 919,
+      "imports": [
+        {
+          "path": "_snowpack/pkg/bs-platform/lib/es6/curry.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "_snowpack/pkg/react.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "_snowpack/pkg/bs-platform/lib/es6/belt_Array.js",
+          "kind": "import-statement"
+        }
+      ]
+    },
+    "_snowpack/pkg/bs-platform/lib/es6/js_math.js": {
+      "bytes": 162,
+      "imports": [
+        {
+          "path": "_snowpack/pkg/common/js_math-ea94a74f.js",
+          "kind": "import-statement"
+        }
+      ]
+    },
+    "HexagonUtil.bs.js": {
+      "bytes": 1796,
+      "imports": [
+        {
+          "path": "_snowpack/pkg/bs-platform/lib/es6/js_math.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "_snowpack/pkg/bs-platform/lib/es6/belt_Array.js",
+          "kind": "import-statement"
+        }
+      ]
+    },
+    "World.bs.js": {
+      "bytes": 1871,
+      "imports": [
+        {
+          "path": "Tree.bs.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "_snowpack/pkg/bs-platform/lib/es6/curry.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "_snowpack/pkg/react.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "_snowpack/pkg/bs-platform/lib/es6/random.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "Hexagon.bs.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "_snowpack/pkg/bs-platform/lib/es6/belt_Array.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "HexagonUtil.bs.js",
+          "kind": "import-statement"
+        }
+      ]
+    },
+    "_snowpack/pkg/react-dom.js": {
+      "bytes": 128629,
+      "imports": [
+        {
+          "path": "_snowpack/pkg/common/index-e66f0a38.js",
+          "kind": "import-statement"
+        }
+      ]
+    },
+    "Index.bs.js": {
+      "bytes": 326,
+      "imports": [
+        {
+          "path": "World.bs.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "_snowpack/pkg/react.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "_snowpack/pkg/react-dom.js",
+          "kind": "import-statement"
+        }
+      ]
+    }
+  },
+  "outputs": {
+    "../~~bundle~~/Index.bs.js": {
+      "imports": [],
+      "exports": [],
+      "inputs": {
+        "_snowpack/pkg/common/index-e66f0a38.js": {
+          "bytesInOutput": 7157
+        },
+        "_snowpack/pkg/react.js": {
+          "bytesInOutput": 492
+        },
+        "Tree.bs.js": {
+          "bytesInOutput": 1337
+        },
+        "_snowpack/pkg/common/caml_array-aa49b891.js": {
+          "bytesInOutput": 339
+        },
+        "_snowpack/pkg/common/curry-991922ea.js": {
+          "bytesInOutput": 1197
+        },
+        "_snowpack/pkg/bs-platform/lib/es6/curry.js": {
+          "bytesInOutput": 0
+        },
+        "_snowpack/pkg/bs-platform/lib/es6/random.js": {
+          "bytesInOutput": 808
+        },
+        "_snowpack/pkg/common/js_math-ea94a74f.js": {
+          "bytesInOutput": 94
+        },
+        "_snowpack/pkg/bs-platform/lib/es6/belt_Array.js": {
+          "bytesInOutput": 360
+        },
+        "Hexagon.bs.js": {
+          "bytesInOutput": 247
+        },
+        "_snowpack/pkg/bs-platform/lib/es6/js_math.js": {
+          "bytesInOutput": 0
+        },
+        "HexagonUtil.bs.js": {
+          "bytesInOutput": 395
+        },
+        "World.bs.js": {
+          "bytesInOutput": 366
+        },
+        "_snowpack/pkg/react-dom.js": {
+          "bytesInOutput": 124113
+        },
+        "Index.bs.js": {
+          "bytesInOutput": 45
+        }
+      },
+      "bytes": 137002
+    }
+  }
+}
