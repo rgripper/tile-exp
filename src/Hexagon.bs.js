@@ -16,6 +16,7 @@ function Hexagon(Props) {
   var shapeBuilder = Props.shapeBuilder;
   var hexagon = Curry._2(shapeBuilder.getHexagonAt, column, row);
   return React.createElement("polygon", {
+              title: "col: " + column + ", row: " + row,
               fill: "#aaaaaa",
               points: getPointsString(hexagon)
             });

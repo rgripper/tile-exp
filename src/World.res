@@ -1,26 +1,26 @@
-let rowLength = 4
+open Geometry
 
 type rec plant = {x: float, y: float}
 
-type rec rectangle = {x: float, y: float, width: float, height: float}
+let hexagonSize = 30.0
+let worldColumns = 9
+let worldRows = 27
 
-let worldRect = {x: 0., y: 0., width: 600., height: 600.}
+let hexagonBuilder = HexagonUtil.makeHexagonBuilder(hexagonSize)
 
-let generateTree = () => {{x: Random.float(600.0), y: Random.float(600.0)}}
-
+let worldRect = hexagonBuilder.getWorldRect(worldColumns, worldRows)
+let generateTree = () => {{x: Random.float(worldRect.width), y: Random.float(worldRect.height)}}
 let trees = Belt.Array.makeBy(36, _i => generateTree())
-
-let hexagonBuilder = HexagonUtil.makeHexagonBuilder(30.0)
 
 @react.component
 let make = () => {
   <svg width={Belt.Float.toString(worldRect.width)} height={Belt.Float.toString(worldRect.height)}>
     {React.array(
-      Belt.Array.makeBy(36, i =>
+      Belt.Array.makeBy(worldColumns * worldRows, i =>
         <Hexagon
           key={Belt.Int.toString(i)}
-          column={mod(i, rowLength)}
-          row={i / rowLength}
+          column={mod(i, worldColumns)}
+          row={i / worldColumns}
           shapeBuilder={hexagonBuilder}
         />
       ),

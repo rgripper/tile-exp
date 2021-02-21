@@ -4,5 +4,5 @@ let getPointsString = (points: array<(float, float)>) =>
 @react.component
 let make = (~column: int, ~row: int, ~shapeBuilder: HexagonUtil.hexagonBuilder) => {
   let hexagon = shapeBuilder.getHexagonAt(column, row)
-  <polygon points={getPointsString(hexagon)} fill={"#aaaaaa"} />
+  <polygon title={j`col: $column, row: $row`} points={getPointsString(hexagon)} fill={"#aaaaaa"} />
 }
