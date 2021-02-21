@@ -1,4 +1,4 @@
-let rowLength = 3
+let rowLength = 4
 
 @react.component
 let make = () => {
